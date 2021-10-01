@@ -11,6 +11,7 @@ import {
 } from 'reactstrap'
 import { ApolloProvider } from 'react-apollo'
 
+import ArticleNewPage from './pages/articleNewPage'
 import ArticlePage from './pages/articlePage'
 import ArticlesPage from './pages/articlesPage'
 import client from './apolloClient'
@@ -41,6 +42,9 @@ function App() {
                   <NavItem>
                     <NavLink href="/articles">Articles</NavLink>
                   </NavItem>
+                  <NavItem>
+                    <NavLink href="/articles/new">Add New</NavLink>
+                  </NavItem>
                 </Nav>
               </Collapse>
             </Navbar>
@@ -48,6 +52,9 @@ function App() {
               <Switch>
                 <Route exact path="/articles">
                   <ArticlesPage />
+                </Route>
+                <Route exact path="/articles/new">
+                  <ArticleNewPage />
                 </Route>
                 <Route exact path="/articles/:id">
                   <ArticlePage />

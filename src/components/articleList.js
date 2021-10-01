@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 
-function ArticleList(props) {
+function ArticleList({ items }) {
   return (
     <>
-      {props.items.map(({ id, title, body }) => (
+      {items.map(({ id, title, body }) => (
         <div key={id}>
           <Link to={`/articles/${id}`}>
             <b>{title}</b>
